@@ -1,7 +1,5 @@
-/* ContactUsForm.css */
-
-/* Style for the container */
-.contact-us-container {
+/* CheckoutForm.css */
+.checkout-form-container {
     max-width: 400px;
     margin: 20px auto;
     padding: 20px;
@@ -12,15 +10,18 @@
     color: #fff;
   }
   
-  /* Style for form labels */
-  .contact-us-container label {
+  .checkout-form-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .checkout-form-container label {
     display: block;
     margin-bottom: 8px;
   }
   
-  /* Style for form inputs and textarea */
-  .contact-us-container input,
-  .contact-us-container textarea {
+  .checkout-form-container input,
+  .checkout-form-container textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 16px;
@@ -29,8 +30,12 @@
     box-sizing: border-box;
   }
   
-  /* Style for the submit button */
-  .contact-us-container button {
+  .checkout-form-container .checkout-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .checkout-form-container button {
     background-color: greenyellow;
     color: black;
     padding: 10px 20px;
@@ -40,8 +45,7 @@
     transition: background-color 0.3s;
   }
   
-  /* Hover effect for the submit button */
-  .contact-us-container button:hover {
-    background-color: goldenrod;
+  .checkout-form-container button:hover {
+    background-color:goldenrod;
   }
   

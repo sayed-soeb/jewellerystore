@@ -23,6 +23,7 @@ const CheckoutForm = () => {
   };
 
   const handleCancel = () => {
+    // Clear form fields and close the checkout form
     setName('');
     setMobile('');
     setAddress('');

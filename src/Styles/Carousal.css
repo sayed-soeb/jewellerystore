@@ -1,0 +1,221 @@
+.carousal-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousal-wrapper {
+  position: relative;
+  text-align: center;
+}
+
+.carousal-heading {
+  position: absolute;
+  top: 45%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  background-color: #00000092;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+.carousal-heading p {
+  color: greenyellow;
+}
+
+.carousal-heading h1 {
+  font-size: 35px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.carousal-image {
+  width: 100%;
+  height: auto;
+}
+
+.carousal-control {
+  position: absolute;
+  top: 50%;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.carousal-control-prev {
+  left: 20px;
+}
+
+.carousal-control-next {
+  right: 20px;
+}
+
+.grid-container {
+  display: grid;
+  width: 80vw;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.grid-item {
+  background-color: #ddd;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.heading2 {
+  text-align: center;
+}
+
+.grid-item img {
+  width: 100%;
+  transition: filter 0.3s ease-in-out;
+}
+
+.grid-item:hover img {
+  filter: brightness(1.2) saturate(1.5);
+}
+
+.discount {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  background-color: #eee;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.discount img {
+  width: 80%;
+}
+
+.ceremony {
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  background-color: #fff;
+}
+
+.ceremony img {
+  width: 40vw;
+  height: 50vh;
+  filter: blur(1px) saturate(1);
+  border: 1px solid greenyellow;
+}
+
+.carousal-heading2 {
+  background-color: #333333c1;
+  width: 25%;
+  position: absolute;
+  top: 45%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 24px;
+  z-index: 1;
+}
+
+.carousal-but2 {
+  position: absolute;
+  text-align: center;
+  top: 70%;
+  left: 70%;
+  width: 20%;
+  height: 10%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 18px;
+  background-color: rgb(255, 172, 64);
+  z-index: 1;
+}
+
+.carousal-heading1 {
+  background-color: #333333c1;
+  position: absolute;
+  width: 25%;
+  top: 45%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 24px;
+  z-index: 1;
+}
+
+.carousal-but1 {
+  position: absolute;
+  text-align: center;
+  color: black;
+  width: 20%;
+  height: 10%;
+  background-color: rgb(255, 172, 64);
+  top: 70%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  z-index: 1;
+}
+
+.footer-container {
+  background-color: black;
+  padding: 20px;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-info {
+  max-width: 300px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: greenyellow;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.close-icon {
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .carousal-heading h1 {
+    font-size: 24px;
+  }
+
+  .carousal-heading p {
+    font-size: 16px;
+  }
+
+  .grid-item {
+    width: 100%;
+  }
+
+  .carousal-but1,
+  .carousal-but2 {
+    width: 50%;
+  }
+}

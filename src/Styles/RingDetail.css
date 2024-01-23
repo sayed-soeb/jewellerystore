@@ -24,7 +24,7 @@
   }
 
   .ring-details-image:hover {
-    transform: scale(2.5);
+    transform: scale(2);
     margin-top: 34%;
   }
   
@@ -37,6 +37,7 @@
     background-color: greenyellow;
     border: none;
     padding: 10px;
+    border-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;

@@ -1,7 +1,7 @@
 // RingList.js
 import React, { useState } from 'react';
 import RingDetail from './RingDetail';
-import { FaCartPlus } from 'react-icons/fa';
+import { FaCartPlus, FaHeart } from 'react-icons/fa';
 import '../Styles/RingList.css';
 
 const RingList = () => {

@@ -23,10 +23,6 @@
     margin-bottom: 20px;
   }
 
-  .ring-details-image:hover {
-    transform: scale(2);
-    margin-top: 34%;
-  }
   
   .ring-details-content {
     text-align: center;
@@ -102,7 +98,7 @@
 }
 
 .ring-carousel img {
-  width: 200px;
+  width: 400px;
   height: auto;
   margin: 0 10px;
 }

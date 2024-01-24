@@ -17,6 +17,7 @@ const RingDetail = ({ ring, onClose }) => {
   const [selectedRingSize, setSelectedRingSize] = useState('16');
   const [selectedGemstone, setSelectedGemstone] = useState('Ruby');
   const [updatedPrice, setUpdatedPrice] = useState(price);
+  const newRing={name,updatedPrice,imageUrl,description};
 
   const handleApply = () => {
     const caratPrice = selectedCarat === '14' ? -50 : selectedCarat === '20' ? 50 : 0;
@@ -43,6 +44,22 @@ const RingDetail = ({ ring, onClose }) => {
 
   const prevImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex - 1 + dummyImages.length) % dummyImages.length);
+  };
+
+  const handleAddToCart = (newRing) => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existingRing = cart.find((cartItem) => cartItem.id === ring.id);
+
+    if (existingRing) {
+      existingRing.quantity += 1;
+    } else {
+      cart.push({ ...ring, quantity: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert(`${ring.name} added to cart!`);
   };
 
   return (
@@ -118,7 +135,7 @@ const RingDetail = ({ ring, onClose }) => {
             <button onClick={handleApply}>Apply</button>
           </div>
 
-          <button>
+          <button onClick={() => handleAddToCart(newRing)}>
             <FaCartPlus />
             Add to Cart
           </button>

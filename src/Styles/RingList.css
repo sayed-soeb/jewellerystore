@@ -13,21 +13,24 @@
   
   .ring-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    width: 75vw;
+    height: 84vh;
+    overflow: scroll;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
   }
   
   .ring-item {
     border: 1px solid #ccc;
     border-radius: 5px;
-    overflow: hidden;
+    /* overflow: hidden; */
     color: #f0f0f0;
-    text-align: center;
+    /* text-align: center; */
   }
   
   .ring-item img {
     width: 100%;
-    height: 50%;
+    height: 85%;
     object-fit: cover;
   }
   .ring-item:hover {
@@ -40,7 +43,8 @@
   }
 
   .ring-details {
-    padding: 10px;
+    /* padding-bottom: 10px; */
+    /* align-items: center; */
     text-align: center;
   }
   
@@ -58,3 +62,47 @@
     background-color: #ddd;
   }
   
+  /* RingList.css */
+
+.main-ring {
+  display: flex;
+  padding: 20px;
+  width: 100%;
+  gap: 30px;
+}
+
+.filter-section {
+  width: 250px;
+  height: 78vh;
+  background-color:rgb(18, 17, 17);
+  color: #f0f0f0;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.filter-header {
+  font-size: 18px;
+  background-color: rgb(38, 35, 35);
+  width: 110%;
+  height: 7%;
+  padding-left: 5%;
+  font-weight: bold;
+  padding-top: 2%;
+  margin-left: -20px;
+  margin-top: -20px;
+
+  margin-bottom: 10px;
+}
+
+.filter-category,
+.filter-price {
+  margin-bottom: 15px;
+}
+
+.filter-checkbox {
+  display: block;
+  margin-bottom: 5px;
+}
+.filter-price label{
+  display: block;
+}

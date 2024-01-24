@@ -1,25 +1,25 @@
 // RingList.js
 import React, { useState } from 'react';
 import RingDetail from './RingDetail';
-import { FaCartPlus, FaHeart } from 'react-icons/fa';
+// import { FaCartPlus, FaHeart } from 'react-icons/fa';
 import '../Styles/RingList.css';
 
 const RingList = () => {
   const initialRings = [
-    { id: 1, name: 'Elegant Diamond Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 500, category: 'Wedding', imageUrl: 'https://kinclimg5.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BISS0103R657_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-26810.png' },
-    { id: 2, name: 'Eternal Gold Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 300, category: 'Engagement', imageUrl: 'https://kinclimg6.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIJP0630R04_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-65668.png' },
-    { id: 3, name: 'Korean Diamond Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 400, category: 'Wedding', imageUrl: 'https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwfd996d94/images/hi-res/501145FAAAC02_2.jpg' },
-    { id: 4, name: 'Gregorian Gold Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 300, category: 'Engagement', imageUrl: 'https://kinclimg9.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIPO0778R27_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-72169.png' },
-    { id: 5, name: 'Samba Diamond Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 700, category: 'Wedding', imageUrl: 'https://kinclimg2.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIPO0735R03_YAA18DIG6SYEMXXXX_ABCD00-PICS-00001-1024-66180.png' },
-    { id: 6, name: 'Snail Gold Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 900, category: 'Engagement', imageUrl: 'https://kinclimg0.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BENS0737R18_RAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-70492.png' },
-    { id: 7, name: 'Dragon Diamond Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 500, category: 'Wedding', imageUrl: 'https://kinclimg6.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BINK0421R03_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-56491.png' },
-    { id: 8, name: 'Arabian Gold Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 800, category: 'Engagement', imageUrl: 'https://kinclimg6.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BISP0096R06_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-23645.png' },
-    { id: 9, name: 'Japanese Diamond Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 600, category: 'Wedding', imageUrl: 'https://kinclimg9.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIID0421R45_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-36155.png' },
-    { id: 10, name: 'Pongya Gold Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 200, category: 'Engagement', imageUrl: 'https://kinclimg3.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BICM0339R06_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-68695.png' },
-    { id: 11, name: 'Elegant Diamond Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 500, category: 'Wedding', imageUrl: 'https://kinclimg8.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIVS0451R17_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-72189.png' },
-    { id: 12, name: 'Eternal Gold Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 300, category: 'Engagement', imageUrl: 'https://kinclimg3.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIAR0097R11_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-17347.png' },
-    { id: 13, name: 'Korean Diamond Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 400, category: 'Wedding', imageUrl: 'https://kinclimg4.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIDG0319R196_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-22561.png' },
-    { id: 14, name: 'Gregorian Gold Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 300, category: 'Engagement', imageUrl: 'https://kinclimg6.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIDG0319R199_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-66193.png' },
+    { id: 1, name: 'Elegant Diamond Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 500, category: 'Wedding',stone:'Diamond', imageUrl: 'https://kinclimg5.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BISS0103R657_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-26810.png' },
+    { id: 2, name: 'Eternal Gold Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 300, category: 'Engagement',stone:'Diamond', imageUrl: 'https://kinclimg6.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIJP0630R04_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-65668.png' },
+    { id: 3, name: 'Korean Diamond Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 400, category: 'Wedding',stone:'Diamond', imageUrl: 'https://www.tanishq.co.in/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwfd996d94/images/hi-res/501145FAAAC02_2.jpg' },
+    { id: 4, name: 'Gregorian Gold Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 300, category: 'Engagement',stone:'Diamond', imageUrl: 'https://kinclimg9.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIPO0778R27_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-72169.png' },
+    { id: 5, name: 'Samba Diamond Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 700, category: 'Wedding',stone:'Diamond', imageUrl: 'https://kinclimg2.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIPO0735R03_YAA18DIG6SYEMXXXX_ABCD00-PICS-00001-1024-66180.png' },
+    { id: 6, name: 'Snail Gold Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 900, category: 'Engagement',stone:'Ruby', imageUrl: 'https://kinclimg0.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BENS0737R18_RAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-70492.png' },
+    { id: 7, name: 'Dragon Diamond Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 500, category: 'Wedding',stone:'Ruby', imageUrl: 'https://kinclimg6.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BINK0421R03_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-56491.png' },
+    { id: 8, name: 'Arabian Gold Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 800, category: 'Engagement',stone:'Ruby', imageUrl: 'https://kinclimg6.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BISP0096R06_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-23645.png' },
+    { id: 9, name: 'Japanese Diamond Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 600, category: 'Wedding',stone:'Ruby', imageUrl: 'https://kinclimg9.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIID0421R45_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-36155.png' },
+    { id: 10, name: 'Pongya Gold Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 200, category: 'Engagement',stone:'Ruby', imageUrl: 'https://kinclimg3.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BICM0339R06_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-68695.png' },
+    { id: 11, name: 'Elegant Diamond Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 500, category: 'Wedding',stone:'Topaz', imageUrl: 'https://kinclimg8.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIVS0451R17_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-72189.png' },
+    { id: 12, name: 'Eternal Gold Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 300, category: 'Engagement',stone:'Topaz', imageUrl: 'https://kinclimg3.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIAR0097R11_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-17347.png' },
+    { id: 13, name: 'Korean Diamond Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 400, category: 'Wedding',stone:'Topaz', imageUrl: 'https://kinclimg4.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIDG0319R196_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-22561.png' },
+    { id: 14, name: 'Gregorian Gold Ring',description: 'Delicate yet enchanting, this teardrop style ring is crafted in 18 karat rose gold, studded with diamonds. Stone Clarity: SI2', price: 300, category: 'Engagement',stone:'Korean Diamond', imageUrl: 'https://kinclimg6.bluestone.com/f_webp,c_scale,w_1024,b_rgb:f0f0f0/giproduct/BIDG0319R199_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-66193.png' },
   ];
 
   const [rings, setRings] = useState(initialRings);
@@ -27,6 +27,7 @@ const RingList = () => {
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedStone, setSelectedStone] = useState('');
 
   const handleFilter = (category) => {
     setSelectedCategory(category);
@@ -83,6 +84,25 @@ const RingList = () => {
       handleFilter('all');
     } else {
       handleFilter(category);
+    }
+  };
+
+  const handleStoneFilter = (category) => {
+    if (selectedStone === category) {
+      // Deselect category if already selected
+      handleFilter('all');
+    } else {
+      StoneFilter(category);
+    }
+  };
+
+  const StoneFilter = (category) => {
+    setSelectedStone(category);
+    if (category === 'all') {
+      setRings(initialRings);
+    } else {
+      const filteredRings = initialRings.filter((ring) => ring.stone === category);
+      setRings(filteredRings);
     }
   };
 
@@ -184,8 +204,8 @@ const RingList = () => {
             <label key={category} className="filter-checkbox">
               <input
                 type="checkbox"
-                checked={selectedCategory === category}
-                onChange={() => handleCategoryFilter(category)}
+                checked={selectedStone === category}
+                onChange={() => handleStoneFilter(category)}
               />
               {category}
             </label>

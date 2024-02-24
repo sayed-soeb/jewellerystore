@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
-import {faCartShopping, faContactBook, faGem, faHeart, faHome, faMagnifyingGlass, faRing} from '@fortawesome/free-solid-svg-icons';
+import {faCartShopping, faContactBook, faGem, faHeart, faHome, faMagnifyingGlass, faRing, faSignIn} from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import "../Styles/Navbar.css";
 
@@ -30,8 +30,8 @@ const Navbar=()=>{
         <div className='nav-icons'>
         <Link to="/"><FontAwesomeIcon icon={faHome} className='icons-div'/></Link>
         <Link to="/ring-list"><FontAwesomeIcon icon={faRing} className='icons-div'/></Link>
-        <Link to="/ring-list"><FontAwesomeIcon icon={faHeart} className='icons-div'/></Link>
         <Link to="/contact"><FontAwesomeIcon icon={faContactBook} className='icons-div'/></Link>
+        <Link to="/login"><FontAwesomeIcon icon={faSignIn} className='icons-div'/></Link>
         <Link to="/cart"><FontAwesomeIcon icon={faCartShopping} className='icons-div'/></Link>
         </div>
         </div>

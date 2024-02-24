@@ -6,6 +6,8 @@ import Navbar from './Components/Navbar';
 import RingList from './Components/RingList';
 import CheckoutForm from './Components/CheckoutForm';
 import ContactUsForm from './Components/ContactUsForm';
+import Login from './Components/Login';
+import Signup from './Components/Signup';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
     <Navbar />
       <Routes>
       <Route path="/" exact element={<Carousal />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/signup' element={<Signup />} />
       <Route path="/ring-list" element={<RingList />} />
       <Route path="/cart" element={<Cart />} />
       <Route path='/checkout' element={<CheckoutForm />} />

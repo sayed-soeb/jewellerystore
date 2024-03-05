@@ -17,6 +17,15 @@
     color: greenyellow;
 }
 
+.nav-icons {
+    display: flex;
+}
+.nav-icons li {
+    text-decoration: none;
+    list-style: none;
+    margin-right: 20px;
+    font-weight: 500;
+}
 
 
 .nav-input input{

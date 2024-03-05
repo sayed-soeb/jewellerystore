@@ -12,7 +12,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("https://ecommerce-app-by-rayyan.onrender.com/login", {
+      const response = await axios.post("https://jewellerystore-by-sayed.onrender.com/login", {
         email,
         password,
       });
